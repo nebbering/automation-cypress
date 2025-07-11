@@ -18,7 +18,7 @@ const selectorsList = {
         cy.visit('/auth/login')
     })
 
-    it('login-bem-sucedido', () => {
+    it.skip('login-bem-sucedido', () => {
         //Verificações
         cy.title(selectorsList.Title).should('include', 'OrangeHRM'),
         cy.get(selectorsList.elementLogin).should('be.visible'),
@@ -30,8 +30,18 @@ const selectorsList = {
         cy.url().should('include', 'dashboard')
     })
 
-    it.skip('Preenchimento das Informações Pessoais', () => {
+    it('Preenchimento das Informações Pessoais', () => {
         
+        //Verificações
+        cy.title(selectorsList.Title).should('include', 'OrangeHRM'),
+        cy.get(selectorsList.elementLogin).should('be.visible'),
+
+        //Entradas
+        cy.get(selectorsList.loginInput).type(userData.UserValid.userName),
+        cy.get(selectorsList.PasswordInput).type(userData.UserValid.userPassword),
+        cy.get(selectorsList.btnLogin).click(),
+        cy.url().should('include', 'dashboard')
+
         cy.get(selectorsList.btnMyInfo).click(),
         cy.url().should('include', 'viewPersonalDetails')
     })

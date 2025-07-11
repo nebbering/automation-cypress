@@ -7,4 +7,18 @@
         "userName": "teste",
         "userPassword": "teste123"
     }
+    "myInfo": {
+        "firstName": "Test",
+        "middleName": "User",
+        "lastName": "Cypress",
+        "employeeId": "12345",
+        "otherId": "67890",
+        "driverLicense": "D1234567",
+        "liceseExpiry": "2025-12-31",
+        "nationality": "American",
+        "maritalStatus": "Single",
+        "dateOfBirth": "1990-01-01",
+        //"gender": "male",
+        "bloodType": "O+"
+    }
 }
