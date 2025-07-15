@@ -15,10 +15,18 @@ class LoginPage {
         cy.visit('/auth/login')
     }
 
-    loginWithUsers(username, password) {
+    loginValid(username, password) {
         cy.get(this.selectorsList().loginInput).type(username),
         cy.get(this.selectorsList().passwordInput).type(password),
         cy.get(this.selectorsList().btnLogin).click()
+        cy.url().should('include', 'dashboard')
+    }
+
+    loginInvalid(username, password) {
+        cy.get(this.selectorsList().loginInput).type(username),
+        cy.get(this.selectorsList().passwordInput).type(password),
+        cy.get(this.selectorsList().btnLogin).click()
+        cy.get(this.selectorsList().wrongCredentialsMessage).should('be.visible')
     }
 
 }
