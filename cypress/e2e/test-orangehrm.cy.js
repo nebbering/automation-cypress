@@ -1,7 +1,9 @@
 import userData from '../fixtures/dataUser.json'
 import LoginPage from '../pages/loginPage.js'
+import myInfoPage from '../pages/myInfoPage.js'
 
 const loginPage = new LoginPage()
+const myInfo = new myInfoPage()
 
 describe('Página de Login', () => {
 
@@ -22,7 +24,25 @@ describe('Página de Login', () => {
         loginPage.accessLoginPage()
         loginPage.loginInvalid(userData.UserValid.userName, userData.userInvalid.userPassword)
 
-        //cy.url().should('include', 'dashboard')
+    })
+
+})
+
+describe('MyInfo Page', () => {
+
+    beforeEach(() => {
+        cy.visit('/auth/login')
+    })
+
+    it.only('Login/Dashboard/MyInfo', () => {
+  
+        loginPage.accessLoginPage()
+        loginPage.loginValid(userData.UserValid.userName, userData.UserValid.userPassword)
+
+        cy.url().should('include', 'dashboard')
+
+        myInfo.accessMyInfoPage()
+
     })
 
 })
