@@ -34,7 +34,7 @@ describe('MyInfo Page', () => {
         cy.visit('/auth/login')
     })
 
-    it('Login/Dashboard/MyInfo', () => {
+    it.only('Login/Dashboard/MyInfo', () => {
   
         loginPage.accessLoginPage()
         loginPage.loginValid(userData.UserValid.userName, userData.UserValid.userPassword)
