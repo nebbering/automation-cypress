@@ -19,18 +19,23 @@ class myInfoPage {
         return selectors
     }
     accessMyInfoPage() {
+
+        // Acessa a página MyInfo e verifica se a URL está correta
         cy.get(this.selectorsList().btnMyInfo).click()
         cy.url().should('include', 'viewPersonalDetails')
 
+        //dados Pessoais
         cy.get(this.selectorsList().firstNameInput).clear().type('Okabe'),
         cy.get(this.selectorsList().middleNameInput).clear().type('Kyouma'),
         cy.get(this.selectorsList().lastNameInput).clear().type('Rintarou'),
-        
+         
+        // Sessão Employee
         cy.get(this.selectorsList().employeeIdInput).clear().type('979797'),
         cy.get(this.selectorsList().otherIdInput).clear().type('979797979'),
         cy.get(this.selectorsList().driverLicenseNumberInput).clear().type('9797979797'),
         cy.get(this.selectorsList().licenseExpiryDateInput).clear().type('2025-12-31'),
 
+        // Clica no botão de salvar e verifica se a mensagem de sucesso é exibida
         cy.get(this.selectorsList().btnSavePersonalDetails).click(),
         cy.get(this.selectorsList().msgSaveSuccess).should('be.visible').and('contain', 'Successfully Updated')
 
