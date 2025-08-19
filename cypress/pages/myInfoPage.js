@@ -25,33 +25,41 @@ class myInfoPage {
         }
         return selectors
     }
+
+    //Funções
+
     accessMyInfoPage() {
 
         // Acessa a página MyInfo e verifica se a URL está correta
         cy.get(this.selectorsList().btnMyInfo).click()
         cy.url().should('include', 'viewPersonalDetails')
-
-        //Dados Pessoais
-        cy.get(this.selectorsList().firstNameInput).clear().type('Okabe'),
-        cy.get(this.selectorsList().middleNameInput).clear().type('Kyouma'),
-        cy.get(this.selectorsList().lastNameInput).clear().type('Rintarou'),
         
-        cy.get(this.selectorsList().employeeIdInput).clear().type('111111'),
-        cy.get(this.selectorsList().otherIdInput).clear().type('222222222'),
-        cy.get(this.selectorsList().driverLicenseNumberInput).clear().type('3333333333'),
-        cy.get(this.selectorsList().licenseExpiryDateInput).clear().type('2025-12-31'),
+        // cy.get(this.selectorsList().employeeIdInput).clear().type('111111'),
+        // cy.get(this.selectorsList().otherIdInput).clear().type('222222222'),
+        // cy.get(this.selectorsList().driverLicenseNumberInput).clear().type('3333333333'),
+        // cy.get(this.selectorsList().licenseExpiryDateInput).clear().type('2025-12-31'),
 
-        cy.get(this.selectorsList().nationalityBox).click({force: true}),
+        //cy.get(this.selectorsList().nationalityBox).click({force: true}),
         //cy.get(this.selectorsList().nationalityInput).click({force: true}),
 
-        cy.get(this.selectorsList().dateOfBirthInput).clear().type('2012-04-07')
+        //cy.get(this.selectorsList().dateOfBirthInput).clear().type(dateOfBirth)
+    }
+
+    fillPersonalDetails(firstName, middleName, lastName) {
+        cy.get(this.selectorsList().firstNameInput).clear().type(firstName)
+        cy.get(this.selectorsList().middleNameInput).clear().type(middleName)
+        cy.get(this.selectorsList().lastNameInput).clear().type(lastName)
+    }
 
 
+
+
+    savePageMyInfo() {
         // Clica no botão de salvar e verifica se a mensagem de sucesso é exibida
         cy.get(this.selectorsList().btnSavePersonalDetails).click(),
         cy.get(this.selectorsList().msgSaveSuccess).should('be.visible').and('contain', 'Successfully Updated')
-
     }
+    
 
     
 }

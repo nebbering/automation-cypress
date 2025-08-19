@@ -34,7 +34,7 @@ describe('MyInfo Page', () => {
         cy.visit('/auth/login')
     })
 
-    it.only('Login/Dashboard/MyInfo', () => {
+    it('Login/Dashboard/MyInfo', () => {
   
         loginPage.accessLoginPage()
         loginPage.loginValid(userData.UserValid.userName, userData.UserValid.userPassword)
@@ -42,6 +42,8 @@ describe('MyInfo Page', () => {
         cy.url().should('include', 'dashboard')
 
         myInfo.accessMyInfoPage()
+        myInfo.fillPersonalDetails(userData.myInfo.firstName, userData.myInfo.middleName, userData.myInfo.lastName)
+        myInfo.savePageMyInfo()
 
     })
 
