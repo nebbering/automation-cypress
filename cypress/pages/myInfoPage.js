@@ -6,20 +6,18 @@ class myInfoPage {
             btnSavePersonalDetails: ":nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button--secondary",
             msgSaveSuccess: ".oxd-toast--success",
 
-            //loginInput: "[name='username']",
-            //passwordInput: "[name='password']",
             firstNameInput: "[name='firstName']",
             middleNameInput: "[name='middleName']",
             lastNameInput: "[name='lastName']",
 
-            employeeIdInput: ":nth-child(3) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
+            employeeIdInput: ":nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
             otherIdInput: ":nth-child(3) > :nth-child(1) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input",
             driverLicenseNumberInput: ":nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
             licenseExpiryDateInput: ":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input",
             ssnNumberInput: "",
             sinNumberInput: "",
 
-            
+
             nationalityBox: ":nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon",
             nationalityInput: ".oxd-select-dropdown > :nth-child(27)", //Brasil
             
@@ -49,7 +47,12 @@ class myInfoPage {
     }
 
     fillStatusDetails(employeeId, otherId, driverLicense, licenseExpiry, ssnNumber, sinNumber) {
-        cy.get(this.selectorsList().employeeIdInput).clear().type(firstName)
+        cy.get(this.selectorsList().employeeIdInput).clear().type(employeeId)
+        cy.get(this.selectorsList().otherIdInput).clear().type(otherId)
+        cy.get(this.selectorsList().driverLicenseNumberInput).clear().type(driverLicense)
+        cy.get(this.selectorsList().licenseExpiryDateInput).clear().type(licenseExpiry)
+        cy.get(this.selectorsList().ssnNumberInput).clear().type(ssnNumber)
+        cy.get(this.selectorsList().sinNumberInput).clear().type(sinNumber)
 
     }
 

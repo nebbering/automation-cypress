@@ -34,7 +34,7 @@ describe('MyInfo Page', () => {
         cy.visit('/auth/login')
     })
 
-    it('Login/Dashboard/MyInfo', () => {
+    it.only('Login/Dashboard/MyInfo', () => {
   
         loginPage.accessLoginPage()
         loginPage.loginValid(userData.UserValid.userName, userData.UserValid.userPassword)
@@ -43,8 +43,9 @@ describe('MyInfo Page', () => {
 
         myInfo.accessMyInfoPage()
         myInfo.fillPersonalDetails(userData.myInfo.firstName, userData.myInfo.middleName, userData.myInfo.lastName)
+        myInfo.fillStatusDetails(userData.myInfo.employeeId, userData.myInfo.otherId, userData.myInfo.driverLicense, userData.myInfo.licenseExpiry, userData.myInfo.ssnNumber, userData.myInfo.sinNumber)
        
-        myInfo.savePageMyInfo()
+        //myInfo.savePageMyInfo()
 
     })
 
