@@ -15,9 +15,7 @@
         "employeeId": "97979",
         "otherId": "79797",
         "driverLicense": "D71V3797",
-        "liceseExpiry": "2035-31-12",
-        "ssnNumber": "123-45-6789",
-        "sinNumber": "987-65-4321",
+        "licenseExpiry": "2035-31-12",
 
         "dateOfBirth": "1990-01-01",
         "bloodType": "O+"

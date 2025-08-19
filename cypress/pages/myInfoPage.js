@@ -10,17 +10,13 @@ class myInfoPage {
             middleNameInput: "[name='middleName']",
             lastNameInput: "[name='lastName']",
 
-            employeeIdInput: ":nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
+            employeeIdInput: ":nth-child(3) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
             otherIdInput: ":nth-child(3) > :nth-child(1) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input",
-            driverLicenseNumberInput: ":nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
+            driverLicenseNumberInput: ":nth-child(3) > :nth-child(2) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input",
             licenseExpiryDateInput: ":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input",
-            ssnNumberInput: "",
-            sinNumberInput: "",
-
 
             nationalityBox: ":nth-child(5) > :nth-child(1) > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon",
             nationalityInput: ".oxd-select-dropdown > :nth-child(27)", //Brasil
-            
             maritalStatusInput: ":nth-child(4) > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-select-text-input",
             dateOfBirthBox: ":nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-icon",
             dateOfBirthInput: ":nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input",
@@ -46,13 +42,11 @@ class myInfoPage {
         cy.get(this.selectorsList().lastNameInput).clear().type(lastName)
     }
 
-    fillStatusDetails(employeeId, otherId, driverLicense, licenseExpiry, ssnNumber, sinNumber) {
+    fillStatusDetails(employeeId, otherId, driverLicense, licenseExpiry) {
         cy.get(this.selectorsList().employeeIdInput).clear().type(employeeId)
         cy.get(this.selectorsList().otherIdInput).clear().type(otherId)
         cy.get(this.selectorsList().driverLicenseNumberInput).clear().type(driverLicense)
         cy.get(this.selectorsList().licenseExpiryDateInput).clear().type(licenseExpiry)
-        cy.get(this.selectorsList().ssnNumberInput).clear().type(ssnNumber)
-        cy.get(this.selectorsList().sinNumberInput).clear().type(sinNumber)
 
     }
 
