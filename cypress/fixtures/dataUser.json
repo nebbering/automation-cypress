@@ -7,6 +7,10 @@
         "userName": "teste",
         "userPassword": "teste123"
     },
+    "emptyCredentials": {
+        "userName": "",
+        "userPassword": ""
+    },
     "myInfo": {
         "firstName": "Okabe",
         "middleName": "Hououin",

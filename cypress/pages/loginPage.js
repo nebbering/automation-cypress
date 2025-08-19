@@ -29,6 +29,14 @@ class LoginPage {
         cy.get(this.selectorsList().wrongCredentialsMessage).should('be.visible')
     }
 
+    loginInvalidEmpty(username, password) {
+        cy.get(this.selectorsList().loginInput)
+        cy.get(this.selectorsList().passwordInput)
+        cy.get(this.selectorsList().btnLogin).click()
+        cy.get('.oxd-input-field-error-message').should('contain', 'Required')
+
+    }
+
 }
 
 export default LoginPage
